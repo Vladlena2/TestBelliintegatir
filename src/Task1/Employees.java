@@ -1,12 +1,12 @@
 /*
-Èìÿ      |Âîçðàñò|Äîëæíîñòü                |Çàðïëàòà
-Êèðèëë   |  26   |Middle java dev          |150000 ðóá
-Âèòàëèé  |  28   |Senior java automation QA|2000$
-Àëåêñàíäð|  31   |junior functional tester |50000 ðóá
-Äåìåíòèé |  35   |dev-ops                  |1500$
+Имя      |Возраст|Должность                |Зарплата
+Кирилл   |  26   |Middle java dev          |150000 руб
+Виталий  |  28   |Senior java automation QA|2000$
+Александр|  31   |junior functional tester |50000 руб
+Дементий |  35   |dev-ops                  |1500$
 
-Äàííàÿ òàáëèöà ïðåäñòàâëåíà â ôîðìàòå List<Map<String,String>>,
-ãäå êàæäûé ýëåìåíò list - ñòðîêà, key â map - íàçâàíèå ñòîëáöà, value â map - çíà÷åíèå ÿ÷åéêè
+Данная таблица представлена в формате List<Map<String,String>>,
+где каждый элемент list - строка, key в map - название столбца, value в map - значение ячейки
 
  */
 
