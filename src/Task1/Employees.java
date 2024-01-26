@@ -1,12 +1,12 @@
 /*
-Имя      |Возраст|Должность                |Зарплата
-Кирилл   |  26   |Middle java dev          |150000 руб
-Виталий  |  28   |Senior java automation QA|2000$
-Александр|  31   |junior functional tester |50000 руб
-Дементий |  35   |dev-ops                  |1500$
+Г€Г¬Гї      |Г‚Г®Г§Г°Г Г±ГІ|Г„Г®Г«Г¦Г­Г®Г±ГІГј                |Г‡Г Г°ГЇГ«Г ГІГ 
+ГЉГЁГ°ГЁГ«Г«   |  26   |Middle java dev          |150000 Г°ГіГЎ
+Г‚ГЁГІГ Г«ГЁГ©  |  28   |Senior java automation QA|2000$
+ГЂГ«ГҐГЄГ±Г Г­Г¤Г°|  31   |junior functional tester |50000 Г°ГіГЎ
+Г„ГҐГ¬ГҐГ­ГІГЁГ© |  35   |dev-ops                  |1500$
 
-Данная таблица представлена в формате List<Map<String,String>>,
-где каждый элемент list - строка, key в map - название столбца, value в map - значение ячейки
+Г„Г Г­Г­Г Гї ГІГ ГЎГ«ГЁГ¶Г  ГЇГ°ГҐГ¤Г±ГІГ ГўГ«ГҐГ­Г  Гў ГґГ®Г°Г¬Г ГІГҐ List<Map<String,String>>,
+ГЈГ¤ГҐ ГЄГ Г¦Г¤Г»Г© ГЅГ«ГҐГ¬ГҐГ­ГІ list - Г±ГІГ°Г®ГЄГ , key Гў map - Г­Г Г§ГўГ Г­ГЁГҐ Г±ГІГ®Г«ГЎГ¶Г , value Гў map - Г§Г­Г Г·ГҐГ­ГЁГҐ ГїГ·ГҐГ©ГЄГЁ
 
  */
 
@@ -24,38 +24,38 @@ public class Employees {
         fillEmployeeList(employeeList);
 
         List<String> specialEmployees = namesEmployeesUnder30(employeeList);
-        System.out.println("Имена сотрудников, младше 30: " + specialEmployees);
+        System.out.println("РРјРµРЅР° СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ, РјР»Р°РґС€Рµ 30: " + specialEmployees);
 
         specialEmployees = namesEmployeesSalaryRubles(employeeList);
-        System.out.println("Имена сотрудников, получающих зарплату в рублях: " + specialEmployees);
+        System.out.println("РРјРµРЅР° СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ, РїРѕР»СѓС‡Р°СЋС‰РёС… Р·Р°СЂРїР»Р°С‚Сѓ РІ СЂСѓР±Р»СЏС…: " + specialEmployees);
 
-        System.out.println("Средний возраст всех сотрудников: " + averageAgeEmployees(employeeList));
+        System.out.println("РЎСЂРµРґРЅРёР№ РІРѕР·СЂР°СЃС‚ РІСЃРµС… СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ: " + averageAgeEmployees(employeeList));
     }
 
     private static void fillEmployeeList(List<Map<String, String>> employeeList) {
         Map<String, String> employee1 = new HashMap<>();
-        employee1.put("name", "Кирилл");
+        employee1.put("name", "ГЉГЁГ°ГЁГ«Г«");
         employee1.put("age", "26");
         employee1.put("position", "Middle java dev");
-        employee1.put("salary", "150000 руб");
+        employee1.put("salary", "150000 Г°ГіГЎ");
         employeeList.add(employee1);
 
         Map<String, String> employee2 = new HashMap<>();
-        employee2.put("name", "Виталий");
+        employee2.put("name", "Г‚ГЁГІГ Г«ГЁГ©");
         employee2.put("age", "28");
         employee2.put("position", "Senior java automation QA");
         employee2.put("salary", "2000$");
         employeeList.add(employee2);
 
         Map<String, String> employee3 = new HashMap<>();
-        employee3.put("name", "Александр");
+        employee3.put("name", "ГЂГ«ГҐГЄГ±Г Г­Г¤Г°");
         employee3.put("age", "31");
         employee3.put("position", "junior functional tester");
-        employee3.put("salary", "50000 руб");
+        employee3.put("salary", "50000 Г°ГіГЎ");
         employeeList.add(employee3);
 
         Map<String, String> employee4 = new HashMap<>();
-        employee4.put("name", "Дементий");
+        employee4.put("name", "Г„ГҐГ¬ГҐГ­ГІГЁГ©");
         employee4.put("age", "35");
         employee4.put("position", "dev-ops");
         employee4.put("salary", "1500$");
@@ -77,7 +77,7 @@ public class Employees {
         List<String> specialEmployees = new ArrayList<>();
         for (Map<String, String> employee : employeeList) {
             String salary = employee.get("salary");
-            if (salary != null && salary.contains("руб")) {
+            if (salary != null && salary.contains("Г°ГіГЎ")) {
                 specialEmployees.add(employee.get("name"));
             }
         }
