@@ -1,77 +1,77 @@
-package Task1;
+/*
+Дан массив NxN.
+Напишите программу на Java которая находит минимальный элемент диагонали на картинке,
+без учёта элемента пересечения диагоналей.
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+Пример:
+1 2 3 4 *5*
+5 6 9 !2! 1
+0 9 1 8 7
+6 *3* 6 6 6
+*99* 100 -2 3 1
+ */
 
-public class Employees2 {
+package Task2;
+
+import java.util.Scanner;
+
+public class Main {
     public static void main(String[] args) {
-        List<Map<String, String>> employeeList = new ArrayList<>();
-        fillEmployeeList(employeeList);
+        Scanner sc = new Scanner(System.in);
+        int[][] array;
+        int n;
 
-        List<String> specialEmployees = namesEmployeesUnder30(employeeList);
-        System.out.println("Имена сотрудников, младше 30: " + specialEmployees);
+        n = inputArraySize(sc);
 
-        specialEmployees = namesEmployeesSalaryRubles(employeeList);
-        System.out.println("Имена сотрудников, получающих зарплату в рублях: " + specialEmployees);
+        array = new int[n][n];
+        fillArray(sc, array);
 
-        System.out.println("Средний возраст всех сотрудников: " + averageAgeEmployees(employeeList));
+        System.out.println("Минимальный элемент на диагонали, без учёта пересечения: " + findMinDiagonalElement(array));
+        sc.close();
     }
 
-    private static void fillEmployeeList(List<Map<String, String>> employeeList) {
-        Map<String, String> employee1 = new HashMap<>();
-        employee1.put("name", "Кирилл");
-        employee1.put("age", "26");
-        employee1.put("position", "Middle java dev");
-        employee1.put("salary", "150000 руб");
-        employeeList.add(employee1);
+    private static int inputArraySize(Scanner sc) {
+        int size = 0;
+        while (size <= 0) {
+            System.out.println("Введите размер массива NxN больше 0: ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Ошибка! Введите целое число для размера массива:");
+                sc.next();
+            }
+            size = sc.nextInt();
 
-        Map<String, String> employee2 = new HashMap<>();
-        employee2.put("name", "Виталий");
-        employee2.put("age", "28");
-        employee2.put("position", "Senior java automation QA");
-        employee2.put("salary", "2000$");
-        employeeList.add(employee2);
-
-        Map<String, String> employee3 = new HashMap<>();
-        employee3.put("name", "Александр");
-        employee3.put("age", "31");
-        employee3.put("position", "junior functional tester");
-        employee3.put("salary", "50000 руб");
-        employeeList.add(employee3);
-
-        Map<String, String> employee4 = new HashMap<>();
-        employee4.put("name", "Дементий");
-        employee4.put("age", "35");
-        employee4.put("position", "dev-ops");
-        employee4.put("salary", "1500$");
-        employeeList.add(employee4);
+        }
+        return size;
     }
 
-    private static List<String> namesEmployeesUnder30(List<Map<String, String>> employeeList) {
-
-        return employeeList.stream()
-                .filter(n -> Integer.parseInt(n.get("age")) < 30)
-                .map(n2 -> n2.get("name"))
-                .collect(Collectors.toList());
+    private static void fillArray(Scanner sc, int[][] array) {
+        System.out.println("Заполните массив произвольными числами: ");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                while (true) {
+                    if (sc.hasNextInt()) {
+                        array[i][j] = sc.nextInt();
+                        break;
+                    } else {
+                        System.out.println("Ошибка! Введите целое число для элемента массива:");
+                        sc.next();
+                    }
+                }
+            }
+        }
     }
 
-    private static List<String> namesEmployeesSalaryRubles(List<Map<String, String>> employeeList) {
-        return employeeList.stream()
-                .filter(n -> n.get("salary").contains("руб"))
-                .map(n2 -> n2.get("name"))
-                .collect(Collectors.toList());
+    private static int findMinDiagonalElement(int[][] array) {
+        int min = Integer.MAX_VALUE;
+        for (int j = 0, i = array.length - 1; j < array.length && i >= 0; i--, j++) {
+            if (i == j) {
+                continue;
+            }
+            if (min > array[j][i]) {
+                min = array[j][i];
+            }
+        }
+        return min;
     }
-
-    private static int averageAgeEmployees(List<Map<String, String>> employeeList) {
-        return (int) employeeList.stream()
-                .mapToInt(n -> Integer.parseInt(n.get("age")))
-                .average()
-                .orElse(0);
-    }
-
-
 }
 
