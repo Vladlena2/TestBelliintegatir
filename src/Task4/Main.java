@@ -1,5 +1,5 @@
 /*
-Реализовать класс корзины интернет-магазина по интерфейсу Basket
+Р РµР°Р»РёР·РѕРІР°С‚СЊ РєР»Р°СЃСЃ РєРѕСЂР·РёРЅС‹ РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅР° РїРѕ РёРЅС‚РµСЂС„РµР№СЃСѓ Basket
  */
 
 package Task4;
@@ -104,23 +104,23 @@ public class Main {
     public static void main(String[] args) {
         MyBasket basket = new MyBasket();
 
-        basket.addProduct("Помидоры", 3);
-        basket.addProduct("Огурцы", 120);
-        basket.addProduct("Яблоки", 100);
-        basket.addProduct("Мандарины", 0);
+        basket.addProduct("РџРѕРјРёРґРѕСЂС‹", 3);
+        basket.addProduct("РћРіСѓСЂС†С‹", 120);
+        basket.addProduct("РЇР±Р»РѕРєРё", 100);
+        basket.addProduct("РњР°РЅРґР°СЂРёРЅС‹", 0);
 
-        System.out.println("Корзина " + basket.getProducts());
+        System.out.println("РљРѕСЂР·РёРЅР° " + basket.getProducts());
 
-        basket.removeProduct("Огурцы");
-        System.out.println("Количество огурцов: " + basket.getProductQuantity("Помидоры"));
-        basket.updateProductQuantity("Мандарины", 23);
-        System.out.println("Количество мандаринов: " + basket.getProductQuantity("Мандарины"));
+        basket.removeProduct("РћРіСѓСЂС†С‹");
+        System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РѕРіСѓСЂС†РѕРІ: " + basket.getProductQuantity("РџРѕРјРёРґРѕСЂС‹"));
+        basket.updateProductQuantity("РњР°РЅРґР°СЂРёРЅС‹", 23);
+        System.out.println("РљРѕР»РёС‡РµСЃС‚РІРѕ РјР°РЅРґР°СЂРёРЅРѕРІ: " + basket.getProductQuantity("РњР°РЅРґР°СЂРёРЅС‹"));
 
-        System.out.println("Корзина " + basket.getProducts());
+        System.out.println("РљРѕСЂР·РёРЅР° " + basket.getProducts());
 
         basket.clear();
 
-        System.out.println("Корзина " + basket.getProducts());
+        System.out.println("РљРѕСЂР·РёРЅР° " + basket.getProducts());
     }
 }
 
