@@ -34,28 +34,28 @@ public class Employees {
 
     private static void fillEmployeeList(List<Map<String, String>> employeeList) {
         Map<String, String> employee1 = new HashMap<>();
-        employee1.put("name", "Êèðèëë");
+        employee1.put("name", "Кирилл");
         employee1.put("age", "26");
         employee1.put("position", "Middle java dev");
-        employee1.put("salary", "150000 ðóá");
+        employee1.put("salary", "150000 руб");
         employeeList.add(employee1);
 
         Map<String, String> employee2 = new HashMap<>();
-        employee2.put("name", "Âèòàëèé");
+        employee2.put("name", "Виталий");
         employee2.put("age", "28");
         employee2.put("position", "Senior java automation QA");
         employee2.put("salary", "2000$");
         employeeList.add(employee2);
 
         Map<String, String> employee3 = new HashMap<>();
-        employee3.put("name", "Àëåêñàíäð");
+        employee3.put("name", "Александр");
         employee3.put("age", "31");
         employee3.put("position", "junior functional tester");
-        employee3.put("salary", "50000 ðóá");
+        employee3.put("salary", "50000 руб");
         employeeList.add(employee3);
 
         Map<String, String> employee4 = new HashMap<>();
-        employee4.put("name", "Äåìåíòèé");
+        employee4.put("name", "Дементий");
         employee4.put("age", "35");
         employee4.put("position", "dev-ops");
         employee4.put("salary", "1500$");
@@ -77,7 +77,7 @@ public class Employees {
         List<String> specialEmployees = new ArrayList<>();
         for (Map<String, String> employee : employeeList) {
             String salary = employee.get("salary");
-            if (salary != null && salary.contains("ðóá")) {
+            if (salary != null && salary.contains("руб")) {
                 specialEmployees.add(employee.get("name"));
             }
         }
